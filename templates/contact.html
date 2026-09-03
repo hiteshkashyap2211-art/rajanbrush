@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Rajan Brush Factory Direct</title>
+
+  <!-- Favicon Fix -->
+  <link rel="shortcut icon" href="#">
+  
+  <!-- Tailwind CSS & FontAwesome -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+  <!-- Custom Styling for Light & Premium Palette -->
+  <style>
+    .glass-nav-light {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #f59e0b;
+      border-radius: 10px;
+    }
+    .soft-shadow {
+      box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
+    }
+    .paint-hero-light {
+      background-color: #f8fafc;
+      background-image: 
+        radial-gradient(circle at 85% 15%, rgba(245, 158, 11, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 10% 85%, rgba(16, 185, 129, 0.05) 0%, transparent 40%);
+    }
+
+    #mobile-menu-overlay {
+      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+    #mobile-menu-drawer {
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .drawer-open #mobile-menu-overlay {
+      opacity: 1;
+      visibility: visible;
+    }
+    .drawer-open #mobile-menu-drawer {
+      transform: translateX(0);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-amber-100 selection:text-amber-900 custom-scrollbar paint-hero-light min-h-screen flex flex-col justify-between overflow-x-hidden">
+
+  <!-- Sticky Glassmorphic Light Navbar -->
+  <nav class="sticky top-0 z-50 glass-nav-light border-b border-slate-200/80 shadow-sm transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20">
+        
+        <!-- Left: Brand Logo & Title -->
+        <a href="{% url 'index' %}" class="flex items-center gap-3 group shrink-0 select-none relative">
+          <div class="relative shrink-0 w-10 h-10 sm:w-11 sm:h-11 rounded-full p-[1.5px] bg-gradient-to-b from-amber-400 via-amber-500 to-amber-600 shadow-md group-hover:shadow-lg transition-all duration-300">
+            <div class="relative w-full h-full rounded-full overflow-hidden bg-white flex items-center justify-center border border-amber-100 shadow-inner">
+              <div class="w-full h-full rounded-full bg-gradient-to-tr from-amber-500 to-amber-400 p-2 sm:p-2.5 flex items-center justify-center text-white shadow-inner group-hover:scale-105 transition-transform duration-300">
+                <svg class="w-full h-full drop-shadow-sm transition-transform duration-300 group-hover:-rotate-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 11l-1.5-1.5a3 3 0 0 0-4.24 0L4 17.76a2 2 0 0 0 0 2.83l.41.41a2 2 0 0 0 2.83 0L15.5 12.76a3 3 0 0 0 0-4.24z" fill="currentColor" fill-opacity="0.2"/>
+                  <path d="M14 2c2 0 4 1.5 5 3.5s0 4.5-2 5.5l-2.5-2.5C15 7 14 5 14 2z" fill="currentColor"/>
+                  <path d="M22 6c-1.5 0-2.5-1-4-1" stroke-dasharray="1 1"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col justify-center">
+            <div class="flex items-center gap-1.5 sm:gap-2">
+              <span class="text-lg sm:text-2xl font-extrabold tracking-tight text-slate-900 leading-none">
+                RAJAN<span class="text-amber-500 font-black">BRUSH</span>
+              </span>
+
+              <div class="flex items-center gap-1 bg-amber-50 border border-amber-200 px-1.5 py-0.5 sm:px-2 rounded-full shadow-sm">
+                <i class="fa-solid fa-circle-check text-amber-500 text-[9px] sm:text-[10px]"></i>
+                <span class="text-amber-700 text-[8px] sm:text-[9px] font-black uppercase tracking-wider">Official</span>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-1 sm:gap-1.5 mt-0.5 sm:mt-1">
+              <span class="text-[8px] sm:text-[10px] font-bold uppercase tracking-[0.16em] text-slate-500">
+                Industrial & Wall Brushes
+              </span>
+              <span class="w-1 h-1 rounded-full bg-slate-300"></span>
+              <span class="text-[8px] sm:text-[9px] font-bold text-slate-400 uppercase tracking-widest">Mfg.</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <div class="hidden lg:flex items-center gap-1 bg-slate-100/80 border border-slate-200 p-1.5 rounded-2xl shadow-inner">
+          <a href="{% url 'index' %}" class="px-4 py-2 rounded-xl text-xs font-bold text-slate-700 hover:text-amber-600 hover:bg-white transition-all">Home</a>
+          <a href="{% url 'index' %}#catalog" class="px-4 py-2 rounded-xl text-xs font-bold text-slate-700 hover:text-amber-600 hover:bg-white transition-all">Product Catalog</a>
+          <a href="{% url 'index' %}#wholesale-box" class="px-4 py-2 rounded-xl text-xs font-bold text-slate-700 hover:text-amber-600 hover:bg-white transition-all flex items-center gap-1.5">
+            <span>Bulk Assortment</span>
+            <span class="bg-emerald-100 text-emerald-700 text-[9px] px-1.5 py-0.5 rounded-full font-bold border border-emerald-200">Save 20%</span>
+          </a>
+          <a href="{% url 'contact' %}" class="px-4 py-2 rounded-xl text-xs font-bold text-amber-600 bg-white shadow-sm transition-all">Contact Us</a>
+        </div>
+
+        <!-- Right Side WhatsApp & Mobile Trigger -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          <a href="https://wa.me/919027522164" target="_blank" class="relative group overflow-hidden rounded-xl p-px font-bold text-xs shadow-md">
+            <span class="absolute inset-0 bg-gradient-to-r from-emerald-500 to-teal-500 transition-all duration-300 group-hover:opacity-90"></span>
+            <span class="relative px-3 sm:px-5 py-2 sm:py-2.5 rounded-[11px] bg-white transition-all duration-300 group-hover:bg-transparent flex items-center gap-1.5 sm:gap-2 text-emerald-700 group-hover:text-white">
+              <i class="fa-brands fa-whatsapp text-emerald-600 text-xs sm:text-sm group-hover:text-white transition-colors"></i>
+              <span class="hidden sm:inline">WhatsApp Connect</span>
+              <span class="sm:hidden text-[11px]">WhatsApp</span>
+            </span>
+          </a>
+
+          <button id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open Menu" class="lg:hidden bg-white border border-slate-200 text-slate-700 hover:text-amber-600 w-9 h-9 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center transition active:scale-95 shadow-sm">
+            <i class="fa-solid fa-bars text-lg"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Drawer -->
+  <div id="mobile-menu-wrapper" class="fixed inset-0 z-[100] pointer-events-none">
+    <div id="mobile-menu-overlay" onclick="toggleMobileMenu()" class="fixed inset-0 bg-slate-900/30 backdrop-blur-sm opacity-0 invisible pointer-events-auto transition-all duration-300"></div>
+
+    <aside id="mobile-menu-drawer" class="fixed top-0 right-0 w-[280px] sm:w-[320px] h-full bg-white border-l border-slate-200 shadow-2xl p-6 flex flex-col justify-between translate-x-full pointer-events-auto transition-transform duration-300 ease-in-out">
+      <div>
+        <div class="flex items-center justify-between pb-5 border-b border-slate-100">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-full bg-amber-500 text-white font-black text-xs flex items-center justify-center">RB</div>
+            <span class="font-extrabold text-slate-900 text-sm">Navigation</span>
+          </div>
+          <button onclick="toggleMobileMenu()" class="w-8 h-8 bg-slate-100 rounded-lg text-slate-500 hover:text-slate-800 flex items-center justify-center">
+            <i class="fa-solid fa-xmark text-sm"></i>
+          </button>
+        </div>
+
+        <div class="mt-6 space-y-2 font-bold text-sm text-slate-700">
+          <a href="{% url 'index' %}" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-amber-50 hover:text-amber-600 transition" onclick="toggleMobileMenu()">
+            <i class="fa-solid fa-house text-slate-400 text-xs w-4"></i> Home
+          </a>
+          <a href="{% url 'index' %}#catalog" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-amber-50 hover:text-amber-600 transition" onclick="toggleMobileMenu()">
+            <i class="fa-solid fa-brush text-slate-400 text-xs w-4"></i> Product Catalog
+          </a>
+          <a href="{% url 'index' %}#wholesale-box" class="flex items-center justify-between px-3 py-2.5 rounded-xl hover:bg-amber-50 hover:text-amber-600 transition" onclick="toggleMobileMenu()">
+            <span class="flex items-center gap-3">
+              <i class="fa-solid fa-boxes-stacked text-slate-400 text-xs w-4"></i> Bulk Assortment
+            </span>
+            <span class="bg-emerald-100 text-emerald-700 text-[9px] px-2 py-0.5 rounded-full font-bold">Save 20%</span>
+          </a>
+          <a href="{% url 'contact' %}" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-amber-50 text-amber-600 transition" onclick="toggleMobileMenu()">
+            <i class="fa-solid fa-envelope text-amber-500 text-xs w-4"></i> Contact Us
+          </a>
+        </div>
+      </div>
+
+      <div class="pt-6 border-t border-slate-100 space-y-3">
+        <a href="/admin" target="_blank" class="flex items-center justify-center gap-2 w-full bg-slate-100 text-slate-800 font-bold py-3 rounded-xl text-xs hover:bg-slate-200 transition">
+          <i class="fa-solid fa-user-shield text-amber-500"></i> Client Login Portal
+        </a>
+        <p class="text-[10px] text-center text-slate-400 font-medium">
+          Rajan Brush Mfg. &bull; Premier Wall Quality
+        </p>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Contact Us Main Section -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-16 w-full">
+    
+    <!-- Hero Header -->
+    <div class="text-center max-w-3xl mx-auto space-y-3 mb-8 sm:mb-14">
+      <span class="bg-amber-100 text-amber-800 border border-amber-200 text-[10px] sm:text-xs font-extrabold px-3.5 py-1.5 rounded-full uppercase tracking-wider inline-flex items-center gap-1.5">
+        <i class="fa-solid fa-industry text-amber-600"></i> Factory Direct B2B
+      </span>
+      <h1 class="text-2xl sm:text-4xl lg:text-5xl font-black text-slate-900 leading-tight">
+        Get In Touch With <span class="bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent">Rajan Brush</span>
+      </h1>
+      <p class="text-slate-600 text-xs sm:text-base leading-relaxed max-w-xl mx-auto">
+        For inquiries regarding wholesale paint brush supply, private label manufacturing, or custom assortment orders, connect directly with our sales team.
+      </p>
+    </div>
+
+    <!-- Info & Form Grid -->
+    <div class="grid md:grid-cols-2 gap-6 sm:gap-10 items-start">
+      
+      <!-- Factory Info Card -->
+      <div class="bg-white border border-slate-200 rounded-2xl sm:rounded-3xl p-5 sm:p-8 space-y-6 soft-shadow">
+        <div class="border-b border-slate-100 pb-4">
+          <h3 class="text-lg sm:text-2xl font-black text-slate-900">Factory & Sales Contact</h3>
+          <p class="text-xs text-slate-500 mt-1">Direct communication with our manufacturing desk.</p>
+        </div>
+
+        <div class="space-y-4 sm:space-y-5">
+          
+          <div class="flex items-start gap-3.5">
+            <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600 shrink-0">
+              <i class="fa-solid fa-phone text-xs sm:text-base"></i>
+            </div>
+            <div>
+              <span class="text-[10px] sm:text-xs text-slate-400 block font-bold uppercase tracking-wider">Direct Call / WhatsApp</span>
+              <a href="tel:+919027522164" class="text-slate-900 font-extrabold hover:text-amber-600 text-base sm:text-lg transition">+91 90275 22164</a>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3.5">
+            <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600 shrink-0">
+              <i class="fa-solid fa-truck-ramp-box text-xs sm:text-base"></i>
+            </div>
+            <div>
+              <span class="text-[10px] sm:text-xs text-slate-400 block font-bold uppercase tracking-wider">MOQ & Logistics</span>
+              <p class="text-slate-700 font-bold text-xs sm:text-sm mt-0.5">Minimum Order: 50 Pcs | Express Delivery Across India</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3.5">
+            <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600 shrink-0">
+              <i class="fa-solid fa-tags text-xs sm:text-base"></i>
+            </div>
+            <div>
+              <span class="text-[10px] sm:text-xs text-slate-400 block font-bold uppercase tracking-wider">Custom Branding</span>
+              <p class="text-slate-700 font-bold text-xs sm:text-sm mt-0.5">Private Label Packaging & OEM Manufacturing for Wholesalers</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="pt-2">
+          <a href="https://wa.me/919027522164?text=Hello%20Rajan%20Brush%20Team,%20I%20would%20like%20to%20inquire%20about%20bulk%20wholesale%20wall%20paint%20brushes." target="_blank" class="w-full bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-bold py-3.5 rounded-xl flex items-center justify-center gap-2 transition shadow-md shadow-emerald-500/20 text-xs sm:text-sm active:scale-95">
+            <i class="fa-brands fa-whatsapp text-base"></i> Direct WhatsApp Inquiry
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Message Form -->
+      <div class="bg-white border border-slate-200 rounded-2xl sm:rounded-3xl p-5 sm:p-8 space-y-4 soft-shadow">
+        <div class="border-b border-slate-100 pb-3">
+          <h3 class="text-lg sm:text-2xl font-black text-slate-900">Send Wholesale Inquiry</h3>
+          <p class="text-xs text-slate-500 mt-0.5">Fill in your requirements for an immediate price quote.</p>
+        </div>
+        
+        <div class="space-y-3 pt-1">
+          <div>
+            <label class="text-xs font-bold text-slate-700 block mb-1">Your Name / Hardware Store Name</label>
+            <input type="text" id="contact-name" placeholder="e.g. Apex Hardware Supplies" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-900 text-xs sm:text-sm outline-none focus:border-amber-500 focus:bg-white transition font-medium">
+          </div>
+
+          <div>
+            <label class="text-xs font-bold text-slate-700 block mb-1">Mobile / WhatsApp Number</label>
+            <input type="tel" id="contact-phone" placeholder="+91 98765 43210" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-900 text-xs sm:text-sm outline-none focus:border-amber-500 focus:bg-white transition font-medium">
+          </div>
+
+          <div>
+            <label class="text-xs font-bold text-slate-700 block mb-1">Requirement Details</label>
+            <textarea id="contact-msg" rows="4" placeholder="Specify brush sizes, filament types, or target order quantity..." class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-900 text-xs sm:text-sm outline-none focus:border-amber-500 focus:bg-white transition font-medium resize-none"></textarea>
+          </div>
+        </div>
+
+        <button onclick="submitContactForm()" class="w-full bg-amber-500 hover:bg-amber-600 text-white font-black py-3.5 rounded-xl transition flex items-center justify-center gap-2 text-xs sm:text-sm shadow-md shadow-amber-500/20 active:scale-95">
+          <i class="fa-solid fa-paper-plane text-xs"></i> Send via WhatsApp
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white text-slate-600 text-xs py-8 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+      <div class="flex items-center gap-2">
+        <div class="bg-amber-500 text-white font-black text-xs p-1.5 rounded-lg">RB</div>
+        <span class="font-bold text-slate-700">&copy; 2026 Rajan Brush Industries. All Rights Reserved.</span>
+      </div>
+      <div class="flex flex-wrap justify-center items-center gap-4 sm:gap-6 text-slate-500">
+        <a href="{% url 'contact' %}" class="hover:text-amber-600 transition">Contact Us</a>
+        <span>Industrial Paint Brushes Manufacturer</span>
+        <a href="/admin" target="_blank" class="hover:text-amber-600 transition font-bold flex items-center gap-1">
+          <i class="fa-solid fa-lock text-[10px]"></i> Admin Portal
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Drawer Toggle & Form Submission Logic -->
+  <script>
+    function submitContactForm() {
+    const nameInput = document.getElementById('contact-name');
+    const phoneInput = document.getElementById('contact-phone');
+    const msgInput = document.getElementById('contact-msg');
+
+    const name = nameInput ? nameInput.value.trim() : '';
+    const phone = phoneInput ? phoneInput.value.trim() : '';
+    const msg = msgInput ? msgInput.value.trim() : '';
+
+    if (!name || !phone) {
+        alert("Please enter your name and phone number.");
+        return;
+    }
+
+    const phoneNumber = "919027522164";
+
+    // Clean Professional Format
+    let message = `Hello Rajan Brush Team,\n\n` +
+        `NEW WHOLESALE INQUIRY\n` +
+        `━━━━━━━━━━━━━━━━━━━\n` +
+        `• Name / Store: ${name}\n` +
+        `• Phone / WhatsApp: ${phone}\n`;
+
+    // Requirement only appears if filled
+    if (msg) {
+        message += `• Requirement Details: ${msg}\n`;
+    }
+
+    message += `━━━━━━━━━━━━━━━━━━━\n` +
+        `Please share your catalog, factory price list, and MOQ details. Thank you!`;
+
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+    }
+  </script>
+</body>
+</html>
