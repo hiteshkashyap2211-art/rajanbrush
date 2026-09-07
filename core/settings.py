@@ -73,7 +73,14 @@ STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 STATIC_DIR = os.path.join(BASE_DIR, "static")
-STATICFILES_DIRS = [STATIC_DIR] if os.path.exists(STATIC_DIR) else []
+MEDIA_DIR = os.path.join(BASE_DIR, "media")
+
+# WhiteNoise ko Media images collect karne ke liye add kiya gaya hai
+STATICFILES_DIRS = []
+if os.path.exists(STATIC_DIR):
+    STATICFILES_DIRS.append(STATIC_DIR)
+if os.path.exists(MEDIA_DIR):
+    STATICFILES_DIRS.append(MEDIA_DIR)
 
 STORAGES = {
     "default": {
@@ -85,6 +92,6 @@ STORAGES = {
 }
 
 MEDIA_URL = "/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_ROOT = MEDIA_DIR
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
